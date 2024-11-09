@@ -2,19 +2,23 @@ import React from "react";
 
 export async function generateMetadata({ params }) {
   // Fetch the video data
+  const rVideo = await fetch(
+    `https://api.stringgeo.com/api/free-video/get-video/${params.id}`
+  );
+  const { video } = await rVideo.json();
 
   // Thumbnail URL Generated
-  const thumbnailUrl = `https://dewv7gdonips4.cloudfront.net/uploads/user-668e5194d73df6053315bb41/profile/1726149063451-16.RepublicMovieDirectorDEVAKATTA[Talk]withStringVinodh_Promo-(1080p).jpg.webp`;
+  const thumbnailUrl = `https://dewv7gdonips4.cloudfront.net/${video?.thumbnail_url}`;
 
   console.log("thumbnailUrl", thumbnailUrl);
 
   return {
-    title: "Video -web p ",
-    description: "web p image",
+    title: video?.title.substring(0, 100),
+    description: video?.description,
     openGraph: {
       type: "video.other",
-      title: "web p image",
-      description: "this is a web p image",
+      title: video?.title,
+      description: video?.description,
       images: [
         {
           url: thumbnailUrl,
@@ -22,22 +26,22 @@ export async function generateMetadata({ params }) {
           height: 630, // Set standard height
         },
       ],
-      //   url: `https://your-domain.com/video/${video.id}`,
-      //   videos: [
-      //     {
-      //       url: video.video_url,
-      //       width: 1280,
-      //       height: 720,
-      //       type: "video/mp4",
-      //     },
-      //   ],
+      // url: `https://your-domain.com/video/${video.id}`,
+      videos: [
+        {
+          url: video?.video_url,
+          width: 1280,
+          height: 720,
+          type: "video/mp4",
+        },
+      ],
     },
     twitter: {
       card: "player",
-      title: "web p image",
-      description: "this is a web p image",
+      title: video?.title,
+      description: video?.description,
       images: [thumbnailUrl],
-      //   player: video.video_url,
+      player: video?.video_url,
       playerWidth: 1280,
       playerHeight: 720,
     },
