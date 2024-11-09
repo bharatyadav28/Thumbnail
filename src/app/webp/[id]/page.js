@@ -44,7 +44,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-function WebpImagePage() {
+function WebpImagePage({ params }) {
+  console.log("params", params);
   return (
     <div>
       <p>This is a webp image page</p>

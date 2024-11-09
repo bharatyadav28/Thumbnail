@@ -45,7 +45,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-function JpgImagePage() {
+function JpgImagePage({ params }) {
+  console.log("params", params);
   return (
     <div>
       <p>This is a jpg image page</p>
