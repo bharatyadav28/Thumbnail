@@ -4,17 +4,17 @@ export async function generateMetadata({ params }) {
   // Fetch the video data
 
   // Thumbnail URL Generated
-  const thumbnailUrl = `https://res.cloudinary.com/djntj8ck7/image/upload/v1691730500/Intensify/Courses/tmp-2-1691730492228_nyvzem.jpg`;
+  const thumbnailUrl = `https://dewv7gdonips4.cloudfront.net/uploads/user-668e5194d73df6053315bb41/profile/1726149063451-16.RepublicMovieDirectorDEVAKATTA[Talk]withStringVinodh_Promo-(1080p).web p.webp`;
 
   console.log("thumbnailUrl", thumbnailUrl);
 
   return {
-    title: "Video -jpg ",
-    description: "Web p image",
+    title: "Video -web p ",
+    description: "web p image",
     openGraph: {
       type: "video.other",
-      title: "Web p image",
-      description: "this is a jpg image",
+      title: "web p image",
+      description: "this is a web p image",
       images: [
         {
           url: thumbnailUrl,
@@ -34,8 +34,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "player",
-      title: "Web p image",
-      description: "this is a jpg image",
+      title: "web p image",
+      description: "this is a web p image",
       images: [thumbnailUrl],
       //   player: video.video_url,
       playerWidth: 1280,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-function jpgImagePage() {
+function WebpImagePage() {
   return (
     <div>
       <p>This is a webp image page</p>
@@ -52,4 +52,4 @@ function jpgImagePage() {
   );
 }
 
-export default jpgImagePage;
+export default WebpImagePage;
