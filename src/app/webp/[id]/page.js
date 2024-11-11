@@ -37,10 +37,10 @@ export async function generateMetadata({ params }) {
       ],
     },
     twitter: {
-      card: "player",
-      title: video?.title.substring(0, 70),
-      description: video?.description?.substring(0, 200),
-      image: [thumbnailUrl],
+      card: "summary_large_image",
+      title: video.title.substring(0, 70),
+      description: video.description?.substring(0, 200),
+      image: thumbnailUrl, // Just a single image property, not an array
     },
   };
 }
