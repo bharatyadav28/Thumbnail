@@ -40,14 +40,7 @@ export async function generateMetadata({ params }) {
       card: "player",
       title: video?.title.substring(0, 70),
       description: video?.description?.substring(0, 200),
-      image: thumbnailUrl,
-      player: {
-        url: video?.video_url,
-        width: 1280,
-        height: 720,
-        stream: video?.video_url,
-        stream_content_type: "video/mp4",
-      },
+      image: [thumbnailUrl],
     },
   };
 }

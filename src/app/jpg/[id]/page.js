@@ -33,15 +33,12 @@ export async function generateMetadata({ params }) {
       //   },
       // ],
     },
-    // twitter: {
-    //   card: "player",
-    //   title: "jpg image",
-    //   description: "this is a jpg image",
-    //   images: [thumbnailUrl],
-    //   //   player: video.video_url,
-    //   playerWidth: 1280,
-    //   playerHeight: 720,
-    // },
+    twitter: {
+      card: "player",
+      title: "jpg image",
+      description: "this is a jpg image",
+      images: [thumbnailUrl],
+    },
   };
 }
 
