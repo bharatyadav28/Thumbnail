@@ -5,9 +5,26 @@ export async function generateMetadata({ params }) {
 
   // Thumbnail URL Generated
 
-  const thumbnailUrl = `https://res.cloudinary.com/djntj8ck7/image/upload/v1691730500/Intensify/Courses/tmp-2-1691730492228_nyvzem.jpg`;
+  const response = await fetch(
+    `https://api.stringgeo.com/api/video/get-video-preview/${params.id}`,
+    {
+      method: "GET",
+      // headers: {
+      //   Authorization: `Bearer ${accessToken}`,
+      // },
+    }
+  );
 
-  console.log("thumbnailUrl", thumbnailUrl);
+  if (!response.ok) {
+    return {};
+  }
+
+  const { video } = await response.json();
+  console.log("Data ", video);
+  // console.log("ID: ", params.id, video);
+
+  // // Thumbnail URL Generated
+  const thumbnailUrl = `https://dewv7gdonips4.cloudfront.net/${video.thumbnail_url}`;
 
   return {
     title: "Video -jpg ",
